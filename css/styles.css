@@ -1,0 +1,265 @@
+/* 
+Color Palette from light to dark: 
+#F6F4EB
+#91C8E4
+#749BC2
+#4682A9
+
+Notes from Thursday: Got up to "Interactivity with CSS", working on smoothing transition in buttons;
+*/
+
+:root {
+	--primary-color: #F6F4EB;
+	--secondary-color: #4682A9;
+	--tertiary-color: #749BC2;
+	--lightest-blue-color: #91C8E4;
+	--light-gray: #D3D3D3;
+	--link-color-active: #000000;
+	--sun-yellow: #edc655;
+	--sun-light-yellow: #fcffad;
+	--sun-orange: #f76414;
+	--font-bold: 700;
+	--font-weight-standard: 400;
+	--font-size-heading: 32px;
+	--font-size-standard: 16px;
+}
+
+body {
+	background-color: var(--primary-color);
+	font-family: 'Raleway', sans-serif;
+	font-weight: var(--font-weight-standard); 
+	font-size: var(--font-size-standard);
+	line-height: 1.6;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	font-weight: var(--font-bold); 
+	font-size: var(--font-size-heading); 
+	line-height: 2;
+	color: var(--secondary-color);
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: var(--font-bold);
+	color: var(--secondary-color);
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	color: var(--tertiary-color);
+}
+
+a:visited {
+	color: var(--lightest-blue-color);
+}
+
+a:hover, a:focus {
+	text-decoration: none;
+}
+
+a:active {
+	color: var(--link-color-active);
+}
+
+button,
+.button {
+	border: none;
+	display: inline-block;
+	font-family: inherit;
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+	text-decoration: none; 
+	padding: 10px; 
+	border-radius: 3px; 
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+	transition: opacity .2s;  
+}
+
+button:hover, 
+button:focus,
+.button:hover,
+.button:focus {
+	cursor: pointer; 
+	opacity: 0.85; 
+}
+
+.button__secondary {
+	background-color: var(--tertiary-color); 
+	color: var(--primary-color);
+}
+
+div {
+
+	padding: 10px;
+	margin: 10px; 
+	/* border: 1px solid black; */
+}
+
+.navigation__logo {
+
+	position: relative; 
+	top: 20px; 
+	left: 20px;
+	width: 50px;
+} 
+
+.profile__portrait {
+
+	float: left; 
+	width: 250px;
+	margin-right: 40px;
+	border-radius: 50%;
+}
+
+.page-footer {
+	clear: both; 
+	display: flex;
+	flex-direction: column; 
+	text-align: center;
+}
+
+.profile,
+.about-info {
+	max-width: 700px;
+	margin: 0 auto; 
+}
+
+.page-header {
+	display: flex; 
+	width: 100%;
+	padding: 20px; 
+}
+
+.page-header__item {
+	flex: 0 1 200px; 
+}
+
+.page-header__item:last-child {
+	flex-grow: 1;
+	text-align: right; 
+}
+
+.navigation-list {
+	list-style-type: none; 
+}
+
+.navigation-list li {
+	display: inline-block;
+	margin-left: 15px; 
+}
+
+.navigation-list__item--active {
+	text-decoration: none; 
+}
+
+.grid__item {
+	display: inline-block;
+	width: 33%; 
+}
+
+@supports (display: grid) {
+	.grid {
+		display: grid; 
+		grid-template-columns: 1fr 1fr 1fr; 
+		grid-gap: 20px; 
+	}
+
+
+	.grid__item {
+		background-color: var(--light-gray); 
+		width: auto; 
+		min-height: auto; 
+		margin: 0; 
+	}
+
+	.grid__item:last-child {
+		grid-column-start: 3;
+		grid-column-end: 3; 
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+}
+
+@media all and (max-width: 500px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+	.grid {
+		grid-template-columns: 1fr 1fr; 
+	}
+}
+
+@media all and (max-width: 750px) {
+	.grid{
+		grid-gap: 10px;
+	}
+
+	.grid__item:last-child {
+		grid-column: auto / auto; 
+		grid-row: auto / auto; 
+	}
+
+	h1 {
+		font-size: 22px; 
+	}
+}
+
+@keyframes color-change {
+	0% {
+		fill: var(--sun-yellow);
+	}
+	50% {
+		fill: var(--sun-light-yellow);
+	}
+	100% {
+		fill: var(--sun-orange);
+	}
+}
+.sun {
+	animation: 4s color-change infinite alternate linear; 
+}
+
+@keyframes cloud-move {
+	from {
+		transform: translate(0, 50px);
+	}
+	to {
+		transform: translate(200px, 50px);
+	}
+}
+
+.cloud-front {
+	animation: 30s cloud-move infinite alternate linear; 
+}
+
+@keyframes cloud-move-reverse {
+	from {
+		transform: translate(446px, 48px);
+	}
+	to {
+		transform: translate(100px, 48px); 
+	}
+}
+
+.cloud-back {
+	animation: 34s cloud-move-reverse infinite alternate linear; 
+}
+
+
+
+
+
+
+
+
+
