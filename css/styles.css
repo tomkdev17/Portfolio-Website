@@ -27,8 +27,8 @@ Notes from Thursday: Got up to "Interactivity with CSS", working on smoothing tr
 body {
 	background-color: var(--primary-color);
 	font-family: 'Raleway', sans-serif;
-	font-weight: var(--font-weight-standard); 
 	font-size: var(--font-size-standard);
+	font-weight: var(--font-weight-standard); 
 	line-height: 1.6;
 }
 
@@ -37,15 +37,16 @@ body {
 }
 
 h1 {
+	color: var(--secondary-color); 
+	font-size: var(--font-size-heading);
 	font-weight: var(--font-bold); 
-	font-size: var(--font-size-heading); 
 	line-height: 2;
-	color: var(--secondary-color);
+	
 }
 
 h2, h3, h4, h5, h6 {
-	font-weight: var(--font-bold);
 	color: var(--secondary-color);
+	font-weight: var(--font-bold);
 }
 
 ul {
@@ -70,15 +71,15 @@ a:active {
 
 button,
 .button {
+	background-color: var(--secondary-color);
 	border: none;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	color: var(--primary-color);
 	display: inline-block;
 	font-family: inherit;
-	background-color: var(--secondary-color);
-	color: var(--primary-color);
+	padding: 10px;
 	text-decoration: none; 
-	padding: 10px; 
-	border-radius: 3px; 
-	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 	transition: opacity .2s;  
 }
 
@@ -96,26 +97,25 @@ button:focus,
 }
 
 div {
-
-	padding: 10px;
 	margin: 10px; 
+	padding: 10px;
 	/* border: 1px solid black; */
 }
 
 .navigation__logo {
 
+	left: 20px;
 	position: relative; 
 	top: 20px; 
-	left: 20px;
 	width: 50px;
 } 
 
 .profile__portrait {
 
-	float: left; 
-	width: 250px;
-	margin-right: 40px;
 	border-radius: 50%;
+	float: left; 
+	margin-right: 40px;
+	width: 250px;
 }
 
 .page-footer {
@@ -127,14 +127,15 @@ div {
 
 .profile,
 .about-info {
-	max-width: 700px;
+	
 	margin: 0 auto; 
+	max-width: 700px;
 }
 
 .page-header {
 	display: flex; 
+	padding: 20px;
 	width: 100%;
-	padding: 20px; 
 }
 
 .page-header__item {
@@ -173,10 +174,11 @@ div {
 
 
 	.grid__item {
-		background-color: var(--light-gray); 
-		width: auto; 
-		min-height: auto; 
+		
+		background-color: var(--light-gray);   
 		margin: 0; 
+		min-height: auto;
+		width: auto;
 	}
 
 	.grid__item:last-child {
