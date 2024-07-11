@@ -165,6 +165,10 @@ div {
 	width: 33%; 
 }
 
+.project-screenshot {
+	width: 100%;
+}
+
 @supports (display: grid) {
 	.grid {
 		display: grid; 
